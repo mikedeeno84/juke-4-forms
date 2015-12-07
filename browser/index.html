@@ -15,10 +15,12 @@
 	<script src="/js/controllers/artist.js"></script>
 	<script src="/js/controllers/artists.js"></script>
 	<script src="/js/controllers/create-playlists.js"></script>
+	<script src="/js/controllers/playlists.js"></script>
 	<script src="/js/factories/player.js"></script>
 	<script src="/js/factories/album.js"></script>
 	<script src="/js/factories/song.js"></script>
 	<script src="/js/factories/artist.js"></script>
+	<script src="/js/factories/playlists.js"></script>
 	<script src="/js/states/albums.js"></script>
 	<script src="/js/states/album.js"></script>
 	<script src="/js/states/artists.js"></script>
@@ -26,6 +28,7 @@
 	<script src="/js/states/artist-albums.js"></script>
 	<script src="/js/states/artist-songs.js"></script>
 	<script src="/js/states/create-playlists.js"></script>
+
 </head>
 <body ng-app="juke">
 	<div id="main" class="container-fluid">
@@ -45,6 +48,11 @@
 				<hr>
 				<section>
 					<h4 class="text-muted">PLAYLISTS</h4>
+					<div ng-controller="PlaylistsCtrl">
+						<p class="playlist-item" ng-repeat="playlist in playlists">
+    						<a>{{playlist.name}}</a>
+						</p>
+					</div>
 					<p>
 						<a class="btn btn-primary btn-block" ui-sref="createPlaylists"><span class="glyphicon glyphicon-plus"></span> PLAYLIST</a>
 					</p>
