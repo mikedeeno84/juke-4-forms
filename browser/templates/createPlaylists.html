@@ -1,0 +1,19 @@
+<div class="well">
+    <form class="form-horizontal" name="playlistForm" ng-submit="playlistSubmit(playlistName)">
+        <fieldset>
+            <legend>New Playlist</legend>
+            <div class="form-group">
+                <label class="col-xs-2 control-label">Title</label>
+                <div class="col-xs-10">
+                    <input name="name" class="form-control" type="text" ng-model="playlistName" required ng-maxlength="16" ng-minlength="1">
+                    <div class="alert alert-warning" ng-show="playlistForm.name.$touched && playlistForm.name.$dirty && playlistForm.name.$invalid">Playlist must be named and less than 16 characters</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-10 col-xs-offset-2">
+                    <button type="submit" class="btn btn-success" ng-disabled="!playlistForm.$valid">Create Playlist</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
