@@ -5,11 +5,10 @@ app.config(function($stateProvider){
     controller: 'PlaylistCtrl',
     resolve: {
       playlist: function(PlaylistsFactory, $stateParams) {
-        debugger;
         return PlaylistsFactory.fetchById($stateParams.playlistId);
       },
       allsongs: function(SongFactory) {
-        
+        return SongFactory.fetchAll()
       }
     }
   });

@@ -1,8 +1,10 @@
 <div>
     <h3>{{ playlist.name }}</h3>
     <h4> Add to Playlist</h4>
-    <select ng-options="song.name for song in songs"></select>
-
+    <form ng-submit="addSong(new_song, playlist._id)">
+    <select ng-model="new_song" ng-options="song.name for song in songs"></select>
+    <div><button type="submit" class="btn btn-success">+ Add Song</button></div>
+    </form>
     <table class='table' ng-show="playlist.songs.length">
         <thead>
             <tr>

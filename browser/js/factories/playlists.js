@@ -19,11 +19,14 @@ app.factory('PlaylistsFactory', function($http){
 	PlaylistsFactory.fetchById = function(id) {
 		return $http.get('/api/playlists/' + id)
 		.then(function(response) {
-			console.log(response.data);
-			debugger;
 			return response.data;
 		});
 	}
-
+	PlaylistsFactory.addSongToList = function(song, playlistId){
+		return $http.post('/api/playlists/' + playlistId + '/songs', {song:song})
+		.then(function(response){
+			return response.data
+		})
+	}
 	return PlaylistsFactory
 })
