@@ -15,5 +15,15 @@ app.factory('PlaylistsFactory', function($http){
 				return playlist;
 			})
 		}
+
+	PlaylistsFactory.fetchById = function(id) {
+		return $http.get('/api/playlists/' + id)
+		.then(function(response) {
+			console.log(response.data);
+			debugger;
+			return response.data;
+		});
+	}
+
 	return PlaylistsFactory
 })
